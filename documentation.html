@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>ES1</title>
+  </head>
+  <body>
+    <h1 id="title1">NON CLICCARE</h1>
+    <button id="btn1">CLICCAMI</button>
+    <script>
+      console.log("bella");
+      var a;
+      a = [2, 4];
+      console.log("a:", a);
+      console.log(document);
+      console.log(document.getElementById("title1"));
+      document.getElementById("title1").innerHTML =
+        "ti avevo detto di non cliccare scemo";
+
+      var ciccio = function (x, y) {
+        var risultato = x + y;
+        console.log("hai chiamato la funzione", risultato);
+      };
+
+      // alternativa
+      // var chiamaCiccio = function () {
+      //   ciccio("piano", "forte");
+      // };
+      // btn.addEventListener("click", chiamaCiccio);
+
+      var btn = document.getElementById("btn1");
+      btn.addEventListener("click", () => {
+        ciccio("piano", "forte");
+      });
+
+      // var a = function () {}; //istanza
+      // function a(){}; //funzione
+      // function (){}; // definizione
+      // a; // definizione
+      // a(); // invocazione
+
+      // self invoking function
+      (function abc() {
+        console.log("funzione A!!!");
+      })();
+      //abc(); -> non funziona, non esiste
+
+      () => {}; //arrow function
+
+      (() => {
+        console.log("funzione arrow!!!");
+      })();
+    </script>
+  </body>
+</html>
