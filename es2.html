@@ -1,14 +1,63 @@
 <html>
   <head>
     <title>ES2</title>
+    <style>
+      table,
+      th {
+        border: thin solid;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+      td {
+        border-top: thin solid black;
+      }
+    </style>
   </head>
   <body>
     <h1 id="title1">ES2</h1>
-    <input type="number" id="input1" placeholder="inserisci il numero"/>
+    <input type="number" id="input1" placeholder="inserisci il numero" />
     <button id="btn1">aggiungi</button>
+    <br /><br /><br />
+    <table id="tabellaBella">
+      <th>Numero</th>
+      <th>pari/dispari</th>
+      <th>divisori</th>
+    </table>
     <script>
+      // funzione javascript pro
+      // var divisori = (n) =>
+      //   [...Array(n + 1).keys()].slice(1).filter((i) => n % i === 0);
+
+      var dati = []; // dichiarazione array vuoto
+      // var oggettoVuoto = {} -> dichiarazione oggetto
+
       var btn = document.getElementById("btn1");
-      btn.addEventListener("click", () => {});
+
+      btn.addEventListener("click", () => {
+        var valore = document.getElementById("input1").value - 0; // cast a numero
+
+        //inserimento in array
+        dati.push(valore);
+        console.log("premuto", valore);
+        console.log("array", dati);
+
+        var divisori = [];
+        for (var ciao = 0; ciao <= valore; ciao++) {
+          if (valore % ciao === 0) {
+            divisori.push(ciao);
+          }
+        }
+
+        var table = document.getElementById("tabellaBella");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+
+        cell1.innerHTML = valore;
+        cell2.innerHTML = valore % 2 === 0 ? "pari" : "dispari";
+        cell3.innerHTML = divisori;
+      });
     </script>
   </body>
 </html>
