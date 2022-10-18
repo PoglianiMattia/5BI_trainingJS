@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>ES3</title>
+    <style type="text/css">
+      .sexyPoglianiTable {
+        background-color: #ffffe0;
+        border-collapse: collapse;
+        color: #000;
+        font-size: 18px;
+      }
+      .sexyPoglianiTable th {
+        background-color: #bdb76b;
+        color: white;
+        /* width: 50%; */
+      }
+      .sexyPoglianiTable td,
+      .sexyPoglianiTable th {
+        padding: 5px;
+        border: 0;
+      }
+      .sexyPoglianiTable td {
+        border-bottom: 1px dotted #bdb76b;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title1">Calcolatrice ES3</h1>
+    <div>
+      <table class="sexyPoglianiTable" id="table">
+        <th>ID</th>
+        <th>N1</th>
+        <th>SIGN</th>
+        <th>N2</th>
+        <th>RES</th>
+        <tr>
+          <td>1</td>
+          <td>4</td>
+          <td>/</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+      </table>
+      <button onclick="localStorage.clear(); location.reload();">
+        Clear localStorage
+      </button>
+    </div>
+    <br /><br />
+    <input type="number" id="N1" placeholder="first number" />
+    <br />
+    <input type="number" id="N2" placeholder="second number" />
+    <br /><br />
+    <button id="btn1">+</button>
+    <button id="btn2">-</button>
+    <button id="btn3">*</button>
+    <button id="btn4">/</button>
+    <script src="es3.js"></script>
+  </body>
+</html>
